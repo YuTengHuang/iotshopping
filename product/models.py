@@ -4,7 +4,6 @@ from io import BytesIO
 from PIL import Image
 from django.core.files import File
 
-# imgaddress = 'http://13.114.100.49:8080'
 imgaddress = 'http://127.0.0.1:8000'
 
 class Product(models.Model):

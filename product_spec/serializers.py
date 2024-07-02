@@ -9,7 +9,6 @@ class ProductSpecSerializers(serializers.ModelSerializer):
 
     class Meta:
         model = ProductSpec
-        # fields = '__all__'
         fields = (
             'pid',
             'spec',

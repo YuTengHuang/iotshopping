@@ -27,13 +27,11 @@ AUTH_USER_MODEL = 'member.Member'
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://127.0.0.1:8000",
-    "http://13.114.100.49:80",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:5173",
     "http://127.0.0.1:8000",
-    "http://13.114.100.49:80",
 ]
 
 SIMPLE_JWT = {
@@ -116,7 +114,19 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
+## MYSQL
+# DATABASES = { 
+#     'default': { 
+#         'ENGINE': 'django.db.backends.mysql', 
+#         'NAME': os.getenv("SQL_NAME"), 
+#         'USER': os.getenv("SQL_USER"), 
+#         'PASSWORD': os.getenv("SQL_PASSWORD"), 
+#         'HOST': os.getenv("SQL_HOST"), 
+#         'PORT': os.getenv("SQL_PORT"), 
+#         'init_command': "SET sql_mode='STRICT_TRANS_TABLES'", 
+#         'charset': 'utf8mb4', 
+#     } 
+# } 
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators

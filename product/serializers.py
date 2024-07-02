@@ -1,6 +1,5 @@
 from rest_framework import serializers
 from .models import Product
-# imgaddress = 'http://13.114.100.49:8080'
 imgaddress = 'http://127.0.0.1:8000'
 class ProductSerializers(serializers.ModelSerializer):
 
@@ -21,16 +20,12 @@ class ProductSerializers(serializers.ModelSerializer):
         fields = (
             'product_id',
             'product_name',
-            # 'product_create_at',
             'product_active_at',
             'product_inactive_at',
-            # 'product_rank',
-            # 'product_image',
-            # 'product_thumbnail',
             'product_price',
             'product_desc',
             'get_url',
-            'get_image',      #<<<<<<<<< 這邊改成image方法2.5就OK
+            'get_image',      #<<<<<<<<< 這邊改成"image"，方法2.5就OK
             'get_image2',
             'get_image3',
             'get_thumbnail',
