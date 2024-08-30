@@ -8,26 +8,24 @@ from .models import Product
 from .serializers import ProductSerializers, ProductSimpleInfoSerializers
 from django.utils import timezone
 
-##################################################  前期教學測試用
 class LateProductList(GenericAPIView):
 
     queryset = Product.objects.all()
     serializer_class = ProductSerializers
-    permission_classes = [IsAuthenticatedOrReadOnly]   ## 新增權限讓未驗證者僅允許讀取 這是ProductInformation class底下所有方法都是IsAuthenticatedOrReadOnly
-                                                       ## 若沒設置將用setting設置的權限
+    permission_classes = [IsAuthenticatedOrReadOnly]   
+                                                      
     def get(self, request):
         product = self.get_queryset()
         serializer = self.serializer_class(product, many=True)
         data = serializer.data
         return JsonResponse(data, safe=False)
 
-@api_view(['GET'])                                       # 這是用裝飾器方式讓方法變屬性
+@api_view(['GET'])                                       
 @permission_classes([IsAuthenticatedOrReadOnly])  
 def late_product_list(request):
     products = Product.objects.all()
     serializer = ProductSerializers(products, many=True)
-    return JsonResponse(serializer.data, safe=False)  ## Response會自動將字典或列表序列化為 JSON 字符串 // JsonResponse 是接收JSON格式
-####################################################  前期教學測試用
+    return JsonResponse(serializer.data, safe=False)  
 
 
 ## 取得活動簡易商品資訊
