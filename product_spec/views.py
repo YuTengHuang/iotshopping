@@ -27,7 +27,6 @@ def get_slug(slug):
 def get_product_info(request, slug):
     product_specs = get_slug(slug) 
 
-    ## 獲取其主鍵值
     product_ids = [product_spec.pid.pk for product_spec in product_specs]
 
     all_product_specs = ProductSpec.objects.filter(pid_id__in=product_ids)
