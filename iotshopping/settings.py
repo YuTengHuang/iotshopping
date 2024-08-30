@@ -182,7 +182,6 @@ EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")        # 寄件者密碼 
 
 
 ## Celery
-# CELERY_BROKER_URL = 'rediss://localhost:6379' need test
 BROKER_URL = 'redis://localhost:6379'
 CELERY_RESULT_BACKEND = 'redis://localhost:6379'
 CELERY_ACCEPT_CONTENT = ['application/json']
