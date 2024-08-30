@@ -27,7 +27,7 @@ class Product(models.Model):
         return self.product_name
     
     @property             
-    def get_thumbnail(self):                # serializers 方法三  此裝飾器將方法轉換為屬性
+    def get_thumbnail(self):    
         if self.product_thumbnail:
             return imgaddress + self.product_thumbnail.url
         else:
