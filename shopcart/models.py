@@ -16,7 +16,7 @@ class ShopCart(models.Model):
     def __str__(self):
         return f"{self.uid.member_username} - {self.pid.product_name}"
 
-@receiver(pre_delete, sender=Color)  ## (signals訊號)(receiver接收): 當Color的某資料被刪除後, 找到有此值的購物車資料並刪除
+@receiver(pre_delete, sender=Color)
 def delete_shop_cart_on_color_delete(sender, instance, **kwargs):
     ShopCart.objects.filter(cid=instance).delete()
 
