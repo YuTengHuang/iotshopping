@@ -12,8 +12,6 @@ from django.core.exceptions import ObjectDoesNotExist
 @api_view(["POST"])
 def post_data(request):
     data = request.data
-    # print(data)
-
     query = Q(uid=data['uid']) & Q(pid=data["pid"])
     if data.get("cid") != '':
         query &= Q(cid=data["cid"])
