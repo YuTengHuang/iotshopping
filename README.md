@@ -1,6 +1,7 @@
 ﻿# iotshop-backend
-
- Demo看[這裡](https://github.com/YuTengHuang/iot_vue)
+ 
+ Demo Website: [Website](http://54.250.153.54/) \
+ 圖片看[這裡](https://github.com/YuTengHuang/iot_vue)
  
  ## 關於nginx
 
