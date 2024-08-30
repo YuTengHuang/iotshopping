@@ -3,7 +3,7 @@ from product.serializers import ProductSerializers
 from rest_framework import serializers
 
 class ProductSpecSerializers(serializers.ModelSerializer):
-    pid = ProductSerializers()  # 嵌套序列化器
+    pid = ProductSerializers()
     spec_size = serializers.CharField(source='spec.size', read_only=True)
     color_color = serializers.CharField(source='color.color_name', read_only=True)
 
