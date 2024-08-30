@@ -30,8 +30,8 @@ def signup(request):
         return JsonResponse({"message": "該用戶名的用戶已存在。"})
     
     form = RegisterForm({
-        'member_username': data.get('username'),  ## data.get() 是根據前端傳來的資料key來輸入
-        'member_email': data.get('email'),        ## 切記要仔細核對前端的資料名稱   
+        'member_username': data.get('username'),  
+        'member_email': data.get('email'),     
         'password1': data.get('password'), 
         'password2': data.get('password2')
     })
@@ -119,19 +119,6 @@ def member_set_data(request):
     else:
         return JsonResponse({"error": "信箱與會員信箱不相符"}, status=status.HTTP_400_BAD_REQUEST)
     
-
-
-
-
-### 寄送Email功能
-## pip install Celery 異步任務處理框架
-## pip install redis 高性能的鍵值對（key-value）數據庫
-
-## 開新shell >> celery -A iotshopping worker --pool=solo -l info
-
-## 載點方法 先執行1.redis-server 在執行2.redis-cli
-## https://stackoverflow.com/questions/59532504/error-while-starting-celery-worker-on-django-error-10061-no-connection-could-be
-
 
 from member.task import send_email
 from django.core.exceptions import ObjectDoesNotExist
