@@ -108,25 +108,25 @@ WSGI_APPLICATION = 'iotshopping.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 ## SQLite
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 ## MYSQL
-# DATABASES = { 
-#     'default': { 
-#         'ENGINE': 'django.db.backends.mysql', 
-#         'NAME': os.getenv("SQL_NAME"), 
-#         'USER': os.getenv("SQL_USER"), 
-#         'PASSWORD': os.getenv("SQL_PASSWORD"), 
-#         'HOST': os.getenv("SQL_HOST"), 
-#         'PORT': os.getenv("SQL_PORT"), 
-#         'init_command': "SET sql_mode='STRICT_TRANS_TABLES'", 
-#         'charset': 'utf8mb4', 
-#     } 
-# } 
+DATABASES = { 
+    'default': { 
+        'ENGINE': 'django.db.backends.mysql', 
+        'NAME': os.getenv("SQL_NAME"), 
+        'USER': os.getenv("SQL_USER"), 
+        'PASSWORD': os.getenv("SQL_PASSWORD"), 
+        'HOST': os.getenv("SQL_HOST"), 
+        'PORT': os.getenv("SQL_PORT"), 
+        'init_command': "SET sql_mode='STRICT_TRANS_TABLES'", 
+        'charset': 'utf8mb4', 
+    } 
+} 
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
